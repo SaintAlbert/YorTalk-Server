@@ -25,7 +25,7 @@
     "jsdoc": "^3.6.3"
   },
   "engines": {
-    "node": "5.x"
+    "node": "6.x"
   },
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc -r public --destination doc --readme README.md -c .jsdocrc",
