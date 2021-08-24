@@ -9,7 +9,8 @@ var easyrtc = require('open-easyrtc');
 var express = require('express');
 var fs = require('fs');
 var Handlebars = require('handlebars');
-var io = require('socket.io');
+//var io = require('socket.io');
+const { Server } = require("socket.io");
 var nconf = require('nconf');
 
 var webServer = null;
@@ -99,6 +100,8 @@ if (ssl !== undefined && ssl.key !== undefined && ssl.cert !== undefined) {
     webServer = require('http')
         .createServer(tubertcApp)
         .listen(serverPort);
+
+  
 }
 
 // Set log level according to debugMode, on production, log level is on error only
@@ -109,7 +112,7 @@ if (debugMode) {
     ioOpts = { 'log level': 0 };
 }
 
-var socketServer = io.listen(webServer, ioOpts);
+var socketServer = new Server(webServer, ioOpts); //io.listen(webServer, ioOpts);
 
 // Set up easyrtc specific options
 easyrtc.setOption('demosEnable', false);
