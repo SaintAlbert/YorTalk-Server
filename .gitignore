@@ -45,3 +45,7 @@ doc/
 package-lock.json
 node-v*
 SHASUMS256.txt
+/.vs/YorTalk_server/config/applicationhost.config
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/YorTalk_server/v16/.suo
